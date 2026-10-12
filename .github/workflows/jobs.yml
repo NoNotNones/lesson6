@@ -4,8 +4,7 @@ on:
   push:
 
 jobs:
-
-   concurrency-jobs2:
+  concurrency-jobs2:
     runs-on: ubuntu-latest
     concurrency:
       group: test
