@@ -11,14 +11,12 @@ jobs:
       group: test
     steps:
       - run: sleep 15
-
   concurrency-jobs1:
     runs-on: ubuntu-latest
     concurrency:
       group: test
     steps:
       - run: sleep 15
-
   deploy-job:
     name: deploy job
     runs-on: ubuntu-latest
@@ -26,7 +24,7 @@ jobs:
     steps:
       - name: test build output
         run: echo ${{ needs.build-job.outputs.build-output }}      
-    
+
   build-job:
     outputs:
       build-output: ${{ steps.buildStep.outputs.buildOut }}
